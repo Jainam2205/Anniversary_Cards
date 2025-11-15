@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anniversary Game Card 1</title>
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #fafafa 0%, #eaeaea 100%);
-            --card-bg: #ffffffee;
-            --text-color: #2a2a2a;
-            --accent-color: #ff3b47;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            --border-radius: 22px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Better Glass Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-color: #fff;
+      --card-bg: rgba(30, 30, 32, 0.55);
+      --border-radius: 2.2rem;
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      --accent-color: #ff6b6b;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--bg-gradient);
-            font-family: "Poppins", sans-serif;
-            color: var(--text-color);
-        }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #111 40%, #333 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .glass-card {
-            width: 420px;
-            padding: 2.5rem;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            animation: fadeIn 1s ease;
-        }
+    .glass-card {
+      width: clamp(340px, 80vw, 420px);
+      padding: clamp(1.4rem, 7vw, 2.8rem) clamp(1.1rem, 6vw, 2.5rem);
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      border: 1.5px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      animation: fadeIn 0.7s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .card-content {
-            font-size: 1.9rem;
-            text-align: center;
-            line-height: 2.6rem;
-            font-weight: 500;
-        }
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.06) 0%, rgba(75,0,144,0.07) 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-        .inside-footer {
-            margin-top: 1.4rem;
-            display: block;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            font-weight: 600;
-        }
+    .card-content {
+      font-size: 2.1rem;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: var(--text-color);
+      text-transform: uppercase;
+      line-height: 2.7rem;
+      z-index: 1;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    .inside-footer {
+      margin-top: 1.2rem;
+      display: block;
+      font-size: 1rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      z-index: 1;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .glass-card {
+        padding: 1.2rem 0.7rem;
+        border-radius: 1.1rem;
+      }
+      .card-content {
+        font-size: 1.15rem;
+        letter-spacing: 1.5px;
+        line-height: 1.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="glass-card">
-        <div class="card-content">
-            How is this one? Good or not? Tell me on DM.
-            <footer class="inside-footer">Made with ❤️ by Jainam</footer>
-        </div>
+  <div class="glass-card">
+    <div class="card-content">
+      How is this one?<br />Good or Not?<br />DM your feedback!
     </div>
+    <footer class="inside-footer">Made with ❤️ by Jainam</footer>
+  </div>
 </body>
 </html>
