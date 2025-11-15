@@ -1,40 +1,70 @@
-<!-- card1.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anniversary Game Card 1</title>
     <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #fafafa 0%, #eaeaea 100%);
+            --card-bg: #ffffffee;
+            --text-color: #2a2a2a;
+            --accent-color: #ff3b47;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 22px;
+        }
+
         body {
-            background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg-gradient);
+            font-family: "Poppins", sans-serif;
+            color: var(--text-color);
         }
-        .card-text {
-            font-size: 2rem;
-            padding: 1rem 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            background: rgba(255,255,255,0.7);
-            border-radius: 10px;
+
+        .glass-card {
+            width: 420px;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            animation: fadeIn 1s ease;
         }
-        footer {
-            font-size: 1.2rem;
-            color: #f76d6d;
-            margin-top: 2rem;
+
+        .card-content {
+            font-size: 1.9rem;
+            text-align: center;
+            line-height: 2.6rem;
+            font-weight: 500;
+        }
+
+        .inside-footer {
+            margin-top: 1.4rem;
+            display: block;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div class="card-text">
-        How is this one? is it good or not? Tell me on DM.
+    <div class="glass-card">
+        <div class="card-content">
+            How is this one? Good or not? Tell me on DM.
+            <footer class="inside-footer">Made with ❤️ by Jainam</footer>
+        </div>
     </div>
-    <footer>Made with ❤️ by Jainam</footer>
 </body>
 </html>
